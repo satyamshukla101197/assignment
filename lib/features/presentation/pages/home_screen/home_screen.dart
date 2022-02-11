@@ -36,7 +36,9 @@ class _SplashScreenState extends State<HomeScreen> {
                 //Kill Loader
                 Navigation.back(context);
                 if (state.userModelEntity != null) {
+                  print("jsdfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfk");
                   userModelEntity=state.userModelEntity;
+                  print("jsdfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfkfk");
                 }
               }
             },
