@@ -10,10 +10,10 @@ class UserResultEntity {
   final String name;
   final String username;
   final String email;
-  final Address? address;
+  final AddressEntity? address;
   final String phone;
   final String website;
-  final Company? company;
+  final CompanyEntity? company;
 
   UserResultEntity({
     required this.id,
@@ -27,14 +27,14 @@ class UserResultEntity {
   });
 }
 
-class Address {
+class AddressEntity {
   final String street;
   final String suite;
   final String city;
   final String zipcode;
-  final Geo geo;
+  final GeoEntity geo;
 
-  Address({
+  AddressEntity({
     required this.city,
     required this.street,
     required this.suite,
@@ -42,22 +42,22 @@ class Address {
     required this.geo
   });
 }
-class Company {
+class CompanyEntity {
   final String name;
   final String catchPhrase;
   final String bs;
 
-  Company({
+  CompanyEntity({
     required this.name,
     required this.bs,
     required this.catchPhrase
   });
 }
-class Geo {
+class GeoEntity {
   final String lat;
   final String long;
 
-  Geo({
+  GeoEntity({
     required this.long,
     required this.lat
   });

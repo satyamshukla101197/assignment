@@ -6,7 +6,7 @@ part 'user_model.g.dart';
 class UserModel{
   final List<UserResult>? userResult;
   UserModel({
-    required this.userResult
+     this.userResult
 });
   factory UserModel.fromJson(Map<String,dynamic> json)=>_$UserModelFromJson(json);
   Map<String,dynamic> toJson()=>_$UserModelToJson(this);

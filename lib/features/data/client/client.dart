@@ -31,6 +31,7 @@ abstract class RestClient {
     ));
     return _RestClient(dio);
   }
-  @GET("${Constants.user}")
+
+  @GET(Constants.user)
   Future<UserModel> getAllUser();
 }

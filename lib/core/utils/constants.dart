@@ -9,7 +9,7 @@ class Constants {
   static const String user = "users";
   static const String errorUnknown = "Error Unknown";
   static const String ERROR_NO_INTERNET = "No Internet";
-  static const String ERROR_UNKNOWN = "Error Unknown";
+  static const String ERROR_UNKNOWN = "Unknown error occurred";
   static const String ERROR_TYPE_TIMEOUT = "Time Out";
 
 }

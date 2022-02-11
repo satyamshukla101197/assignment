@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supdup/core/config/localization.dart';
 
 
 import 'core/utils/constants.dart';
 import 'core/utils/routes.dart';
 import 'features/presentation/pages/home_screen/home_screen.dart';
+import 'features/presentation/pages/home_screen/home_screen_bloc.dart';
 import 'injection_container.dart' as di;
+import 'injection_container.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +47,10 @@ class MyApp extends StatelessWidget {
 
   Map<String, WidgetBuilder> _registerRoutes() {
     return <String, WidgetBuilder>{
-      AppRoutes.splash: (context) => HomeScreen(),
+      AppRoutes.splash: (context) =>  BlocProvider<HomeScreenBloc>(
+        create: (context) => sl<HomeScreenBloc>(),
+        child:    HomeScreen(),
+      ),
     };
   }
 }

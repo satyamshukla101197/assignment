@@ -10,16 +10,18 @@ import 'core/network/network_info.dart';
 import 'features/data/datasource/local_datasource.dart';
 import 'features/data/datasource/remote_datasource.dart';
 import 'features/data/repositories/repository_impl.dart';
+import 'features/data/use_cases/use_case.dart';
 import 'features/domain/repositories/repository.dart';
+import 'features/presentation/pages/home_screen/home_screen_bloc.dart';
 
 
 final sl = GetIt.instance;
 
 Future<void> init() async {
   // Bloc
-
+  sl.registerFactory(() => HomeScreenBloc(homeScreenUseCase: sl()));
   // usecases
-
+  sl.registerLazySingleton(() => HomeScreenUseCase(sl()));
   // repository
   sl.registerLazySingleton<Repository>(() => RepositoryImpl(
       localDataSource: sl(), remoteDataSource: sl(), networkInfo: sl()));
